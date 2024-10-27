@@ -6,6 +6,8 @@
 
 
 --Part 2
+select name from employer
+where location = "St. Louis City";
 
 --Part 3
 
