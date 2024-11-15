@@ -2,6 +2,7 @@ package org.launchcode.techjobs.persistent.models;
 
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.ManyToMany;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -16,7 +17,7 @@ public class Skill extends AbstractEntity {
     @Size(min=3, max=50)
     private String description;
 
-    @ManyToMany(mappedBy = "skills")
+    @ManyToMany(mappedBy = "skills", fetch = FetchType.EAGER)
     private List<Job> jobs = new ArrayList<>();
 
     public Skill(String description) {
